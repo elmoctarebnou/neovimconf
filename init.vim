@@ -1,5 +1,7 @@
 syntax enable
 
+syntax enable
+
 set directory=$HOME/.vim/swap//
 set exrc                   
 set relativenumber
@@ -40,6 +42,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
@@ -52,6 +56,14 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'davidhalter/jedi-vim'
+Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
 call plug#end() 
 
 colorscheme gruvbox
@@ -67,10 +79,10 @@ nnoremap <leader>l <c-w><c-l>
 nnoremap <leader>vs <cmd>vsplit<cr>
 nnoremap <leader>hs <cmd>split<cr>
 nnoremap <leader>ft :NERDTreeToggle<CR>
+
+vmap <leader>cc <plug>NERDCommenterToggle
+
 imap jj <Esc>
 
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-" run prettier on save
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-        
+nmap <silent>gd <Plug>(coc-definition)
+vmap <leader>fs  <Plug>(coc-format-selected)
