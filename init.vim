@@ -6,13 +6,14 @@ set directory=$HOME/.vim/swap//
 set exrc                   
 set relativenumber
 set nu
+set nohlsearch
 set hidden
 set noerrorbells
 set tabstop=4 softtabstop=4  
 set shiftwidth=4
 set expandtab
 set smartindent
-set nowrap  
+set nowrap 
 set incsearch
 set scrolloff=8
 set colorcolumn=80
@@ -72,13 +73,13 @@ highlight Normal guibg=none
 let mapleader = " "
 nnoremap <leader>s :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ft :NERDTreeToggle<CR>
+nnoremap <leader>vs <cmd>vsplit<cr>
+nnoremap <leader>hs <cmd>split<cr>
 nnoremap <leader>h <c-w><c-h>
 nnoremap <leader>j <c-w><c-j>
 nnoremap <leader>k <c-w><c-k>
 nnoremap <leader>l <c-w><c-l>
-nnoremap <leader>vs <cmd>vsplit<cr>
-nnoremap <leader>hs <cmd>split<cr>
-nnoremap <leader>ft :NERDTreeToggle<CR>
 
 vmap <leader>cc <plug>NERDCommenterToggle
 
